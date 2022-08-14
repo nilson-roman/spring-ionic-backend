@@ -1,6 +1,7 @@
 package com.udemy.nelio.cursomc.services;
 
 import com.udemy.nelio.cursomc.domain.Categoria;
+import com.udemy.nelio.cursomc.dto.CategoriaDTO;
 import com.udemy.nelio.cursomc.repositories.CategoriaRepository;
 import com.udemy.nelio.cursomc.services.exceptions.DataIntegrityException;
 import com.udemy.nelio.cursomc.services.exceptions.ObjectNotFoundException;
@@ -53,5 +54,9 @@ public class CategoriaService {
         PageRequest pageRequest = PageRequest
                 .of(page, linesPerPage, Direction.valueOf(direction), orderBy);
         return repository.findAll(pageRequest);
+    }
+
+    public Categoria fromDTO(CategoriaDTO dto){
+        return new Categoria(dto.getId(), dto.getName());
     }
 }
