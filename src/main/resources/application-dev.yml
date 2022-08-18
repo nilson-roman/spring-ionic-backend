@@ -1,8 +1,8 @@
 spring:
   datasource:
-    username: root
-    url: jdbc:mysql://localhost:3306/curso_spring
-    password: ''
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/cursomc
+    password: 'develop'
   jpa:
     properties:
       hibernate:
