@@ -1,6 +1,8 @@
 package com.udemy.nelio.cursomc.config;
 
 import com.udemy.nelio.cursomc.services.DBService;
+import com.udemy.nelio.cursomc.services.EmailService;
+import com.udemy.nelio.cursomc.services.MockEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,5 +21,10 @@ public class TestConfig {
     public boolean instantiateDatabase() throws ParseException {
         dbService.instantiateTestDatabase();
         return true;
+    }
+
+    @Bean
+    public EmailService emailService() {
+        return new MockEmailService();
     }
 }
