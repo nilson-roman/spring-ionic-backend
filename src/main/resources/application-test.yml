@@ -13,3 +13,19 @@ spring:
       hibernate:
         format_sql: 'true'
     show-sql: 'true'
+  mail:
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            port: '465'
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: 'false'
+          starttls:
+            enable: 'true'
+          ssl:
+            enable: 'true'
+          auth: 'true'
+    host: smtp.gmail.com
+    username: ${EMAIL_USERNAME:vazio}
+    password: ${EMAIL_PASSWORD:vazio}
