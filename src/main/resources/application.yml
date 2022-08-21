@@ -1,6 +1,9 @@
 spring:
   profiles:
     active: ${APP_PROFILE:test}
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 default:
   sender: ${EMAIL_SENDER:vazio}
