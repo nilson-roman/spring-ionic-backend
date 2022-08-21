@@ -3,11 +3,14 @@ package com.udemy.nelio.cursomc.services;
 import com.udemy.nelio.cursomc.domain.Cidade;
 import com.udemy.nelio.cursomc.domain.Cliente;
 import com.udemy.nelio.cursomc.domain.Endereco;
+import com.udemy.nelio.cursomc.domain.enums.Perfil;
 import com.udemy.nelio.cursomc.domain.enums.TipoCliente;
 import com.udemy.nelio.cursomc.dto.ClienteDTO;
 import com.udemy.nelio.cursomc.dto.ClienteNewDTO;
 import com.udemy.nelio.cursomc.repositories.ClienteRepository;
 import com.udemy.nelio.cursomc.repositories.EnderecoRepository;
+import com.udemy.nelio.cursomc.security.UserSS;
+import com.udemy.nelio.cursomc.services.exceptions.AuthorizationException;
 import com.udemy.nelio.cursomc.services.exceptions.DataIntegrityException;
 import com.udemy.nelio.cursomc.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +38,12 @@ public class ClienteService {
     private BCryptPasswordEncoder pe;
 
     public Cliente find(Integer id) {
+
+        UserSS user = UserService.authenticated();
+        if (user==null || !user.hasRole(Perfil.ADMIN) && !id.equals(user.getId())) {
+            throw new AuthorizationException("Acesso negado");
+        }
+
         Optional<Cliente> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException(
                 "Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
