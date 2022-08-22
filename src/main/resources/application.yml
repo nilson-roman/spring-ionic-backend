@@ -16,3 +16,8 @@ s3:
 aws:
   access_key_id: ${AWS_KEY:vazio}
   secret_access_key: ${AWS_SECRET:vazio}
+
+img:
+  prefix:
+    client:
+      profile: cp
