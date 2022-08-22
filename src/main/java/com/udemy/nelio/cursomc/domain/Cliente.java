@@ -22,6 +22,7 @@ public class Cliente implements Serializable {
     private Integer tipo;
     @JsonIgnore
     private String senha;
+    private String imgeUrl;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Endereco> enderecos = new ArrayList<>();
@@ -130,6 +131,14 @@ public class Cliente implements Serializable {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public String getImgeUrl() {
+        return imgeUrl;
+    }
+
+    public void setImgeUrl(String imgUrl) {
+        this.imgeUrl = imgUrl;
     }
 
     @Override
