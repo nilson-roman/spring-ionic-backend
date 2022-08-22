@@ -18,6 +18,8 @@ aws:
   secret_access_key: ${AWS_SECRET:vazio}
 
 img:
+  profile:
+    size: '200'
   prefix:
     client:
       profile: cp
