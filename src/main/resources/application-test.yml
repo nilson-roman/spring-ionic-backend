@@ -26,6 +26,6 @@ spring:
           ssl:
             enable: 'true'
           auth: 'true'
-    host: smtp.gmail.com
+    host: smtp.mail.yahoo.com
     username: ${EMAIL_USERNAME:vazio}
     password: ${EMAIL_PASSWORD:vazio}

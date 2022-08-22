@@ -34,5 +34,5 @@ spring:
             enable: 'true'
           auth: 'true'
     host: smtp.mail.yahoo.com
-    username: ''
-    password: ''
+    username: ${EMAIL_USERNAME:vazio}
+    password: ${EMAIL_PASSWORD:vazio}
