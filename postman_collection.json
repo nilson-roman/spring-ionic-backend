@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "920a9be3-1f3e-4145-9d1f-394d566edbe0",
+		"name": "Cursomc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13559525"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nelio.iftm@gmail.com\",\n    \"senha\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWxpby5pZnRtQGdtYWlsLmNvbSIsImV4cCI6MTY2MTA0NDQwMn0.2Hneb5Kbrp-jYYz4a__1J5dL0QPB5RAR_A0rOn_DPlRGKS3piYMezsZOsG7n0JpnzbuDGRZYjtWzv17fDJ5Esg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nilsonrobertoroman@yahoo.com.br\",\n    \"senha\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/auth/refresh_token",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"auth",
+								"refresh_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWxpby5pZnRtQGdtYWlsLmNvbSIsImV4cCI6MTY2MTA0NDQwMn0.2Hneb5Kbrp-jYYz4a__1J5dL0QPB5RAR_A0rOn_DPlRGKS3piYMezsZOsG7n0JpnzbuDGRZYjtWzv17fDJ5Esg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nilsonrobertoroman@yahoo.com.br\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/auth/forgot",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"auth",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Get Categoria by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/categorias/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/categorias",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categorias Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/categorias/page",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"categorias",
+								"page"
+							],
+							"query": [
+								{
+									"key": "linesPerPage",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "direction",
+									"value": "DESC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/categorias/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Categoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ferramentas\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/categorias/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWxpby5pZnRtQGdtYWlsLmNvbSIsImV4cCI6MTY2MTM4NDIwMX0.KvoN9JpU2GYBd_sDO5MLB5feQbV0BSIlk3e5qzbDyWBtiJQrzBo96KpoljICYK-cRi9_zSOm0QQPVKW3vJgQnQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Computadores\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/categorias",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Get Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWxpby5pZnRtQGdtYWlsLmNvbSIsImV4cCI6MTY2MTA0NDQzMH0.ksBGMrf0S7MMUMqNsd7WF5M3PslXPWAJeh6KUjWwVZuc1DrndvYwRsOFDX249QqGxUee5n4KquI1nmBpeaM45w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/pedidos",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pedidos by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWxzb25yb2JlcnRvcm9tYW5AeWFob28uY29tLmJyIiwiZXhwIjoxNjYxMDQzOTM0fQ.aCjMMKMTfmemfyiUF_2DNl8eq3ErFaUyJterZOguR29PNQ7S71byC9m69yC9ggoAiEllPJf2H6DyqZYM9r597A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/pedidos/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Pedidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWxpby5pZnRtQGdtYWlsLmNvbSIsImV4cCI6MTY2MTA0Mzc3N30.1o-DHRLQO4ifwiHNu7T3cDyHv4BIkVAicxv6Uo4T9476P4ZuLWU-_jc78rxCMeFtQurxHgv6JyacsiqFEqVpbg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cliente\" : {\"id\" : 1},\n    \"enderecoDeEntrega\" : {\"id\" : 1},\n    \"pagamento\" : {\n        \"numeroDeParcelas\" : 10,\n        \"@type\": \"pagamentoComCartao\"\n    },\n    \"itens\" : [\n        {\n            \"quantidade\" : 2,\n            \"produto\" : {\"id\" : 3}\n        },\n        {\n            \"quantidade\" : 1,\n            \"produto\" : {\"id\" : 1}\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/pedidos",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Get Cliente by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWxpby5pZnRtQGdtYWlsLmNvbSIsImV4cCI6MTY2MTM3OTAzMX0.7DDHuBydUxvQe8WiAwlDtOc5coJpV-zGeE-BUsxzDRlQP8BAUJJQ2JF3lFCo1356jC391uiRG9F5d4E7tl23EQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/clientes/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\" : \"João da Silva\",\n    \"email\" : \"joao@gmail.com\",\n    \"cpfOuCnpj\" : \"39044683756\",\n    \"tipo\" : 1,\n    \"telefone1\" : \"997723874\",\n    \"telefone2\" : \"32547698\",\n    \"logradouro\" : \"Rua das Acácias\",\n    \"numero\" : \"345\",\n    \"complemento\" : \"Apto 302\",\n    \"cep\" : \"38746928\",\n    \"cidadeId\" : 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/clientes",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Cliente Foto",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWxpby5pZnRtQGdtYWlsLmNvbSIsImV4cCI6MTY2MTI5Njc5OX0.SdDtb5Wiv5wO-vQs1A3-5Tq67xaCrkZrppLsLGR1FNG1Mx1dhJSCj6_JgpmYVn1pRT2OhNY4m9zXHE2tyaV0rg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "fender.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/clientes/picture",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"picture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Maria Silva Borges\",\n    \"email\": \"maria@yahoo.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/clientes/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/clientes/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cliente by Email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWxzb25yb2JlcnRvcm9tYW5AeWFob28uY29tLmJyIiwiZXhwIjoxNjYxMzc5MjExfQ.BfsN-UtR64VxVxcmtNdo7Ho5f1ujywZzUbFpw_9eoXquI1ZG3qP9BB2XFPo45E792I1TeRMNrGCzi5pmJSI_SQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/clientes/email?value=nilsonrobertoroman@yahoo.com.br",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"clientes",
+								"email"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "nilsonrobertoroman@yahoo.com.br"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Get Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/produtos/?name=or&categorias=1,4",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"produtos",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "or"
+								},
+								{
+									"key": "categorias",
+									"value": "1,4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estados",
+			"item": [
+				{
+					"name": "Get all Estados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/estados",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cidade by Estado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/estados/2/cidades",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"estados",
+								"2",
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
